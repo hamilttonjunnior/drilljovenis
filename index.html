@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FC Académicos - Guia Completo de Treino de Voleibol</title>
+  <style>
+    :root {
+      --bg-color: #f4f5f7;
+      --card-bg: #ffffff;
+      --text-color: #111827;
+      --text-muted: #667280;
+      --accent-black: #0f172a;
+      --border-color: #e5e7eb;
+      --radius: 12px;
+      --font-main: apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.5;
+      padding: 16px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Header & Logo */
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent-black);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .brand-logo-img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Navigation / Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      scrollbar-width: none;
+    }
+
+    .nav-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--accent-black);
+      color: white;
+      border-color: var(--accent-black);
+    }
+
+    /* Section Header */
+    .section-title {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 20px 0 10px 0;
+      color: var(--accent-black);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent-black);
+    }
+
+    .badge-time {
+      background: var(--accent-black);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .card-focus {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* Images */
+    .card-image {
+      width: 100%;
+      margin: 12px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: #f8fafc;
+      text-align: center;
+    }
+
+    .card-image img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Lists */
+    .content-list {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .content-list li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+    }
+
+    .content-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-black);
+      font-weight: bold;
+    }
+
+    /* Variations */
+    .variations {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-color);
+      font-size: 12px;
+    }
+
+    .var-hard {
+      color: #b91c1c;
+      margin-bottom: 4px;
+    }
+
+    .var-easy {
+      color: #158030;
+    }
+
+    /* Table Styles */
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: var(--accent-black);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 38px;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header com a Logo.png -->
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="FC Académicos Logo" class="brand-logo-img" onerror="this.style.display='none'">
+      <div class="brand-title">FC ACADÉMICOS</div>
+    </div>
+    <div class="subtitle">Guia de Treino de Voleibol | Treinador Hamilton</div>
+  </header>
+
+  <!-- Filtro de Abas -->
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="filterCategory('todos')">Todos os Drills</button>
+    <button class="tab-btn" onclick="filterCategory('base')">Diagnóstico Base</button>
+    <button class="tab-btn" onclick="filterCategory('recepcao')">Recepção & Passe</button>
+    <button class="tab-btn" onclick="filterCategory('levantamento')">Levantamento</button>
+    <button class="tab-btn" onclick="filterCategory('saque')">Saque</button>
+    <button class="tab-btn" onclick="filterCategory('ataque')">Ataque</button>
+    <button class="tab-btn" onclick="filterCategory('bloqueio')">Bloqueio & Defesa</button>
+    <button class="tab-btn" onclick="filterCategory('transicao')">Transição & Rali</button>
+    <button class="tab-btn" onclick="filterCategory('matriz')">Planeamento Semanal</button>
+  </div>
+
+  <div id="content-area">
+
+    <!-- DIAGNÓSTICO BASE -->
+    <div class="item-category base">
+      <div class="section-title">Exercícios Base</div>
+
+      <!-- Coração -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #24 - Drill do Coração (Heart Drill)</div>
+          <span class="badge-time">18 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Controle de Bola, Leitura e Fluxo Contínuo</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1aqt4bDVaxYGE2VSw6DbTP3lMizxZV7Xi" alt="Drill do Coração" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Desenho Espacial:</b> Padrão de movimentação em formato de coração conectando as 5 posições-chave.</li>
+          <li><b>Objetivo Técnico:</b> Aprimorar tempo de reação, precisão no passe de antebraço e movimentação fluida.</li>
+          <li><b>Execução:</b> A bola inicia no Central (Posição 6). A sequência segue: Central passa para Meio E/D -> Meio passa para Cima E/D -> Cima devolve direto para o Central. O ciclo se repete continuamente.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Adicionar fluxo de cobertura de bloqueio para as atacantes das pontas.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Reduzir trajetórias, focando apenas na sequência simples de passe e levantamento.</div>
+        </div>
+      </div>
+
+      <!-- Borboleta -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #23 - Drill da Borboleta (Butterfly Drill)</div>
+          <span class="badge-time">12 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Saque, Recepção, Elevação ao Alvo e Transição Rápida</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1cGojxesW9Xd3PMqpBpXqQY0VOGN5CDPG" alt="Drill da Borboleta" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Desenho Espacial:</b> Trajetórias cruzadas na diagonal através da rede com rotação em 4 posições.</li>
+          <li><b>Objetivo Técnico:</b> Leitura de saque, comunicação verbal e rotação constante após a ação.</li>
+          <li><b>Execução:</b> A: Saque -> B: Recepção -> C: Levantamento -> D: Ataque e transição. Cada jogadora corre para a próxima posição após agir. Novo saque a cada 5 segundos.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Incluir fluxo de cobertura de bloqueio adicional para atacantes.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Focar exclusivamente na cadeia Saque-Recepção-Levantamento.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 1: RECEPÇÃO -->
+    <div class="item-category recepcao">
+      <div class="section-title">Módulo 1: Recepção de Saque & Controle de Bola</div>
+
+      <!-- Drill 1 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #01 - Passe Triangulado em Cadeia</div>
+          <span class="badge-time">10 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Montagem de Plataforma, Ajuste de Pés e Cobertura</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1BUI_33aV7QgkccDWwpRn3FOa8tCFqHcy" alt="Passe Triangulado" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Trio em formação triangular (duas no fundo, uma receptora na rede).</li>
+          <li><b>Execução:</b> Realização de passes contínuos em antebraço e toque, mantendo a rotação fixa. A jogadora de retaguarda faz a movimentação de cobertura para trás da receptora.</li>
+          <li><b>Volume:</b> 3 séries de 10 repetições perfeitas por posição.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Reduzir a distância do triângulo e exigir passe em suspensão.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Permitir recepção alta com as duas mãos sem exigência de deslocamento veloz.</div>
+        </div>
+      </div>
+
+      <!-- Drill 2 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #02 - Passe na Parede com Aceleração</div>
+          <span class="badge-time">10 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Vel. de Reação, Ajuste Fino e Fortalecimento de Antebraço</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1T9xHnb_mMtp-A-99dnElXBY9mAdqmtsp" alt="Passe na Parede" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Posicionamento a 2-3 metros de uma parede livre.</li>
+          <li><b>Execução:</b> A atleta executa passes contínuos de antebraço contra a parede sem deixar a bola cair, mantendo a base baixa e atenta.</li>
+          <li><b>Volume:</b> 3 séries de 30 a 50 repetições contínuas.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Afastar para 5 metros, alternando entre passe de toque e manchete.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Permitir um quique controlado no chão entre cada passe na parede.</div>
+        </div>
+      </div>
+
+      <!-- Drill 3 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #03 - Recepção sob Pressão "21 Down"</div>
+          <span class="badge-time">12 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Controle Emocional, Precisão Mental e Final de Set</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1UdkdKjxvsJMuLu680mlshBNbsOiPg67j" alt="Recepção 21 Down" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Linha de passe montada. A equipe inicia com uma margem de 21 pontos.</li>
+          <li><b>Execução:</b> Passe perfeito mantém os pontos. Passe imperfeito (fora da Zona Dourada) deduz 1 ponto. Erro direto ou ace reduz 2 a 3 pontos. O objetivo é cumprir as rotações sem zerar o placar.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Saques flutuantes acelerados direcionados especificamente às zonas de conflito.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Saque por baixo com velocidade e trajetória controladas.</div>
+        </div>
+      </div>
+
+      <!-- Drill 4 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #04 - Deslocamento e Toque de Cones</div>
+          <span class="badge-time">10 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Agilidade de Pés e Reorganização do Centro de Gravidade</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1BkK9DYo5azsgVV8k9ng5XD3QKAEKcA5b" alt="Toque de Cones" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Cones dispostos nas laterais com a atleta posicionada ao centro.</li>
+          <li><b>Execução:</b> A atleta realiza deslocamento rápido, toca no cone designado, retorna imediatamente ao centro e executa o passe no passe disparado pelo treinador.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Incluir comandos visuais aleatórios do treinador sinalizando a cor do próximo cone.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Fixar uma sequência pré-definida e repetitiva de deslocamento.</div>
+        </div>
+      </div>
+
+      <!-- Drill 5 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #05 - Chamada em Zonas de Conflito ("Mine, Yours, Out")</div>
+          <span class="badge-time">12 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Comunicação Verbal Agressiva e Tomada de Decisão</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1lgOtzUynomFKoW80DU6BnhAtl8ZpU3_V" alt="Zonas de Conflito" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Dupla ou trio de recepção posicionado na quadra de fundo.</li>
+          <li><b>Execução:</b> O treinador lança a bola propositalmente na zona intermediária (entre duas passadoras). É obrigatória a chamada em alta voz ("MINHA" ou "TUA") antes do toque.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Incluir bolas aceleradas no fundo do corredor.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Reduzir a largura e a distância da área de conflito entre as atletas.</div>
+        </div>
+      </div>
+
+      <!-- Drill 22 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #22 - Ovelha Negra de Recepção</div>
+          <span class="badge-time">15 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Pressão Contínua e Isolamento de Passadora</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1oTHKVkjsGTD0euOuW7Huoo0qPtqE_TES" alt="Ovelha Negra" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Formação defensiva normal com uma passadora designada como "Ovelha Negra".</li>
+          <li><b>Execução:</b> Todos os saques da equipe adversária devem ser direcionados obrigatoriamente para a atleta isolada, testando sua consistência sobre alta carga emocional.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Se a atleta errar a recepção, a equipe perde 2 pontos no placar acumulado.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Permitir auxílio da passadora adjacente se o saque for muito aberto.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 2: LEVANTAMENTO -->
+    <div class="item-category levantamento">
+      <div class="section-title">Módulo 2: Levantamento & Tomada de Decisão</div>
+
+      <!-- Drill 6 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #06 - Levantamento de Costas em Trio</div>
+          <span class="badge-time">12 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Enquadramento de Ancas/Quadril e Precisão do Toque</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1bbiRINxS1_iAdYFBcsL8bttJyCY4fS3x" alt="Levantamento de Costas" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Três atletas alinhadas longitudinalmente na quadra.</li>
+          <li><b>Execução:</b> A atleta central recebe a bola de frente, ajusta a postura neutra do quadril e executa o levantamento de costas com precisão para a terceira jogadora. Rotação constante.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Execução obrigatória do levantamento em suspensão (jump set).</div>
+          <div class="var-easy"><b>Mais fácil:</b> Permitir retenção/amortecimento momentâneo para ajuste da bola antes do passe.</div>
+        </div>
+      </div>
+
+      <!-- Drill 7 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #07 - Circuito de Decisão do Levantador</div>
+          <span class="badge-time">15 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Visão Periférica e Leitura do Bloqueio Oposto</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1E64-Eqa3Asl9jqsGW9XXKMkHeQ4vnTl8" alt="Circuito de Decisão" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Levantador posicionado na Zona Dourada (Posição 2/3).</li>
+          <li><b>Execução:</b> No instante em que o passe viaja, o treinador/defensor oposto sinaliza a zona fechada (ex: levantando a mão). O levantador deve ler a pista e distribuir para a zona livre (Posição 2, 4 ou Pipe).</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Adicionar passes fora da rede (passes imperfeitos) para forçar tomada de decisão rápida.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Bola lançada diretamente de graça (free ball) na mão do levantador.</div>
+        </div>
+      </div>
+
+      <!-- Drill 8 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #08 - Levantamento de Emergência com Líbero</div>
+          <span class="badge-time">12 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Transição de Defesa para Levantamento de Segunda Bola</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1GPxUoQRgxV54_MS3xUrHjf3F62Ecx5pH" alt="Levantamento de Emergência" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Defesa organizada com o levantador titular fora da jogada (primeira bola defendida por ele ou anulada).</li>
+          <li><b>Execução:</b> A bola é defendida e o líbero/defensor assume a segunda bola, realizando levantamento de manchete ou toque alto de precisão para as pontas.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Forçar distribuição de emergência para a Posição 2 (Saída de rede).</div>
+          <div class="var-easy"><b>Mais fácil:</b> Levantamento alto e seguro para a Posição 4 (Entrada de rede).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 3: SAQUE -->
+    <div class="item-category saque">
+      <div class="section-title">Módulo 3: Saque & Pressão Inicial</div>
+
+      <!-- Drill 9 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #09 - Saque por Zonas Alvo (Target Serving)</div>
+          <span class="badge-time">15 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Controle Biomecânico e Precisão Direcionada</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1kDvELeFbujtSj5GPdOclrviKeUwLv2aD" alt="Saque por Zonas Alvo" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Cones, arcos ou tapetes posicionados nas Posições 1, 5 e zonas de conflito.</li>
+          <li><b>Execução:</b> A servidora executa o saque visando acertar os alvos. Acertos diretos nas pontas somam 1 ponto; acertos nas zonas de conflito somam 2 pontos.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Exigir saque com salto (viagem ou flutuante em suspensão).</div>
+          <div class="var-easy"><b>Mais fácil:</b> Sacar de uma distância reduzida (linha dos 6 ou 7 metros).</div>
+        </div>
+      </div>
+
+      <!-- Drill 10 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #10 - Saque e Sprint Defensivo</div>
+          <span class="badge-time">10 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Transição Rápida Pós-Saque para Posição Defensiva</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/15bo5wP9EtApXd1IeajOx_V4eMFOWTudl" alt="Saque e Sprint" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Atleta saca da linha de fundo.</li>
+          <li><b>Execução:</b> Imediatamente após o contato com a bola, a servidora dá um sprint direto para a sua posição defensiva (ex: Posição 1) para defender um contra-ataque disparado pelo treinador.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Desafio em equipe: vence a equipe que somar 10 saques com defesa perfeita.</div>
+          <div class="var-easy"><b>Mais fácil:</b> O treinador envia uma bola alta de graça (free ball) em vez de ataque.</div>
+        </div>
+      </div>
+
+      <!-- Drill 11 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #11 - Saque + Primeira Bola em Transição</div>
+          <span class="badge-time">15 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Conectar Saque Eficaz com Leitura do Retorno</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1rznAMzd-fMB-Yl6cKkQMAB9vnyOoWcXr" alt="Saque e Primeira Bola" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Equipe sacadora organizada com linha de bloqueio defensivo pronta.</li>
+          <li><b>Execução:</b> A equipe executa o saque, lê a recepção adversária e se organiza imediatamente para montar a primeira linha de bloqueio/defesa contra o ataque de retorno.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Retorno adversário com ataque rápido de meio.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Retorno adversário em bola alta devolvida nas extremidades.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 4: ATAQUE -->
+    <div class="item-category ataque">
+      <div class="section-title">Módulo 4: Ataque & Ritmo de Passada</div>
+
+      <!-- Drill 12 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #12 - Ritmo de Aproximação e Salto</div>
+          <span class="badge-time">12 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Biomecânica da Passada, Tempo e Ponto Mais Alto</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1N1zvDMgPZEIsDFIhAt_TCpalYnB8W7ZE" alt="Aproximação e Salto" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Atletas alinhadas fora da linha de ataque.</li>
+          <li><b>Execução:</b> Realização da passada de aproximação acelerada (ajuste - travagem - fecho), salto no tempo exato da bola lançada e golpe no ponto mais alto.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Incluir salto sobre barreira/obstáculo na passada inicial.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Ataque com a bola parada/segura no ar pelo treinador.</div>
+        </div>
+      </div>
+
+      <!-- Drill 13 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #13 - Ataque no Paredão (Wall Hitting)</div>
+          <span class="badge-time">10 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Técnica de Golpe de Pulso, Precisão e Potência</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1xSb1PV-G3CVSctpZcpU0xuw_UDvBGSML" alt="Ataque no Paredão" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Atleta posicionada a 3 metros do paredão.</li>
+          <li><b>Execução:</b> A atleta lança a bola e realiza o golpe de ataque contra o chão/parede, controlando o retorno da bola em sequência ritmada.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Aumentar a distância para 5-6 metros e limitar a apenas 1 toque de controle.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Reduzir a distância para 2 metros permitindo ajuste com duas mãos.</div>
+        </div>
+      </div>
+
+      <!-- Drill 14 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #14 - Escada de Virada de Bola (Side-Out Ladder)</div>
+          <span class="badge-time">15 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Virada de Bola sob Pressão e Consistência</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1OuSIgIaZ-BdHbsrv6thr1k9I69Eb4L2W" alt="Escada de Virada de Bola" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Sexteto posicionado para recepção de saque.</li>
+          <li><b>Execução:</b> A equipe precisa converter 3 viradas de bola seguidas (side-out de primeira) para "subir um degrau". Se cometer erro direto, a pontuação do degrau zera.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Exigir que as 3 viradas de bola sejam finalizadas em zonas de ataque distintas.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Permitir ponto se a bola resultar em bloqueio amortecido jogável.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 5: BLOQUEIO & DEFESA -->
+    <div class="item-category bloqueio">
+      <div class="section-title">Módulo 5: Bloqueio & Defesa</div>
+
+      <!-- Drill 15 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #15 - Bloqueio com Recomposição Rápida</div>
+          <span class="badge-time">12 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Salto na Rede, Recuo em Drop Step e Defesa de Largada</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1gm4Bu86l4_fYi4QvSY7J0v20I5Ax2V8N" alt="Bloqueio e Recomposição" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Bloqueadora posicionada na rede.</li>
+          <li><b>Execução:</b> A atleta salta no bloqueio, cai mantendo o equilíbrio, executa a passada de recuo (drop step) até a linha dos 3 metros e defende uma bola largada pelo treinador.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Realizar três bloqueios consecutivos (Posições 4, 3 e 2) antes do recuo.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Realizar apenas um bloqueio sem deslocamento lateral prévio.</div>
+        </div>
+      </div>
+
+      <!-- Drill 16 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #16 - Ataque contra Bloqueio Vivo</div>
+          <span class="badge-time">15 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Leitura da Mão do Atacante e Fechamento de Corredor/Diagonal</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1ftACGbmX3a-Vw-03kcWohEENqsYX3zbP" alt="Bloqueio Vivo" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Linha de bloqueadores contra atacantes reais.</li>
+          <li><b>Execução:</b> Os centrais e extremidades ajustam o tempo do salto e o fechamento do espaço com as mãos para neutralizar os ataques em corredor ou diagonal.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Ataque adversário com combinações táticas (pipe, rápida de meio).</div>
+          <div class="var-easy"><b>Mais fácil:</b> O atacante avisa com antecedência a direção onde irá bater.</div>
+        </div>
+      </div>
+
+      <!-- Drill 17 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #17 - Defesa de Bolas Potentes</div>
+          <span class="badge-time">10 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Postura Baixa e Amortecimento de Impacto</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1hUhjfVepuCrygpgv-gDexbp8gedeY-8g" alt="Defesa de Bolas Potentes" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Defensoras posicionadas nas Posições 1, 6 e 5.</li>
+          <li><b>Execução:</b> O treinador ataca forte de cima de uma plataforma na rede. A meta das defensoras é amortecer a bola para o centro da quadra (Zona Dourada).</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Bolas desviadas com toque no bloqueio (bolas desviadas/prensadas).</div>
+          <div class="var-easy"><b>Mais fácil:</b> Reduzir a altura da plataforma e a potência dos ataques.</div>
+        </div>
+      </div>
+
+      <!-- Drill 18 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #18 - Desafio Defensivo dos 6 Pontos</div>
+          <span class="badge-time">15 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Intensidade Defensiva e Ralis Longos</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1D8Pi1IRecmXPbq5gb7nGpknChF376H3m" alt="Desafio Defensivo 6 Pontos" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Sexteto defensivo completo na quadra.</li>
+          <li><b>Execução:</b> A equipe precisa realizar 6 defesas perfeitas consecutivas contra ataques sequenciais do adversário/treinador para finalizar a série.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Qualquer bola que tocar diretamente o chão zera o placar acumulado.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Permitir 1 falha/erro tolerável por série de 6.</div>
+        </div>
+      </div>
+
+      <!-- Drill 19 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #19 - Perseguição e Recuperação de Bola</div>
+          <span class="badge-time">12 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Atitude de Resgate e Passe de Emergência</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/1yxJzaJlxFZjLIW3XvwhnBu3QGn456rDF" alt="Perseguição e Recuperação" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Atletas na quadra de defesa.</li>
+          <li><b>Execução:</b> O treinador lança a bola fora das linhas delimitadoras da quadra; a atleta dá um sprint de perseguição, realiza o passe de emergência alto para a quadra e recompõe a posição.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Exigir o envio da bola salva obrigatoriamente por cima da rede/antena.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Apenas enviar a bola alta de volta para o centro da quadra.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 6: TRANSIÇÃO -->
+    <div class="item-category transicao">
+      <div class="section-title">Módulo 6: Transição & Jogos Reduzidos</div>
+
+      <!-- Drill 20 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #20 - Transição 6 contra 4</div>
+          <span class="badge-time">15 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Aceleração em Superioridade Numérica e Contra-Ataque</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/17AmNBVtAOeXoHOVkHyDISPVdsGn5qGV5" alt="Transição 6 contra 4" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Sexteto completo contra uma defesa/bloqueio reduzido de 4 atletas.</li>
+          <li><b>Execução:</b> A equipe de 6 constrói o ataque, defende a resposta e faz a transição rápida aproveitando os espaços vazios da formação reduzida.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> A equipe de 4 recebe ponto duplo a cada contra-ataque convertido.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Restringir o ataque do sexteto apenas às posições da frente.</div>
+        </div>
+      </div>
+
+      <!-- Drill 21 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Drill #21 - O Exercício dos 2 Minutos (Two-Minute Drill)</div>
+          <span class="badge-time">10 MIN</span>
+        </div>
+        <div class="card-focus">Foco: Condicionamento Anaeróbico e Ritmo Máximo de Rali</div>
+        <div class="card-image">
+          <img src="https://lh3.googleusercontent.com/d/15PvFqpI5YlzY86VUMTC5bR93hobACLj_" alt="Exercício dos 2 Minutos" loading="lazy">
+        </div>
+        <ul class="content-list">
+          <li><b>Estrutura:</b> Sexteto em quadra com múltiplos baldes de bola com o treinador.</li>
+          <li><b>Execução:</b> 120 segundos ininterruptos de rali. Assim que uma bola cai, outra é inserida imediatamente pelo treinador sem pausa para descanso.</li>
+        </ul>
+        <div class="variations">
+          <div class="var-hard"><b>Mais difícil:</b> Inserção de bolas imprevisíveis sem aviso prévio de direção.</div>
+          <div class="var-easy"><b>Mais fácil:</b> Intervalo fixo de 5 segundos entre a entrada de cada bola.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLANEAMENTO SEMANAL -->
+    <div class="item-category matriz">
+      <div class="section-title">Matriz de Planeamento Semanal</div>
+      <div class="card">
+        <div class="card-title" style="margin-bottom: 12px;">Distribuição Semanal de Treinos</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Dia / Sessão</th>
+                <th>Foco Principal</th>
+                <th>Drills Recomendados</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Terça-Feira</b> (Sessão 1)</td>
+                <td>Passe, Saque & Controle</td>
+                <td>Drills 1, 2, 3, 4, 5, 9, 10, 22</td>
+              </tr>
+              <tr>
+                <td><b>Quinta-Feira</b> (Sessão 2)</td>
+                <td>Levantamento & Ataque</td>
+                <td>Drills 6, 7, 8, 12, 13, 14</td>
+              </tr>
+              <tr>
+                <td><b>Sexta-Feira</b> (Sessão 3)</td>
+                <td>Bloqueio & Defesa</td>
+                <td>Drills 15, 16, 17, 18, 19</td>
+              </tr>
+              <tr>
+                <td><b>Sábado</b> (Sessão 4)</td>
+                <td>Transição & Rali Real</td>
+                <td>Drills 23 (Borboleta), 24 (Coração), 11, 20, 21</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    FC ACADÉMICOS 2026 | Plataforma de Treinamento de Voleibol
+  </footer>
+
+  <script>
+    function filterCategory(category) {
+      // Atualizar botões das abas
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
+
+      // Filtrar cartões/módulos
+      const items = document.querySelectorAll('.item-category');
+      items.forEach(item => {
+        if (category === 'todos') {
+          item.style.display = 'block';
+        } else {
+          if (item.classList.contains(category)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
